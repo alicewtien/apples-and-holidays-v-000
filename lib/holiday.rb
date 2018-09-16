@@ -67,9 +67,8 @@ def all_supplies_in_holidays(holiday_hash)
     puts "#{seasons}:".to_s.capitalize!
     holidays_in_season.each do |holiday, supplies|
       if holiday.to_s.split("_").size > 1
-        holiday.to_s.split("_").each do |word|
-          holiday = word.capitalize.join(" ")
-          puts "  #{holiday}: #{supplies.join(", ")}"
+        holiday = holiday.to_s.split("_")
+        puts "  #{holiday.capitalize.join(" ")}: #{supplies.join(", ")}"
         end
       else
         puts "  #{holiday.capitalize}: #{supplies.join(", ")}"
