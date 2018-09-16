@@ -61,7 +61,7 @@ def all_supplies_in_holidays(holiday_hash)
       if holiday.to_s.split("_").size > 1
 #split("_") removes the "_" between the words and after that is the string size
 #is > 1 then need to capitalize each word
-        holiday = holiday.to_s.each {|word| word.capitalize!}
+        holiday = holiday.to_s.split("_").each {|word| word.capitalize!}
 #.to_s (to string),
         puts "  #{holiday.join(" ")}: #{supplies.join(", ")}"
       else
