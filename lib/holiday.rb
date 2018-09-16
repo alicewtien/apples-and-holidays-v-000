@@ -57,8 +57,12 @@ def all_supplies_in_holidays(holiday_hash)
   holiday_hash.each do |seasons, holidays_in_season|
     puts "#{seasons}:".to_s.capitalize!
     holidays_in_season.each do |holiday, supplies|
+#b/c some holidays have more than 1 word in the name so need if/else
       if holiday.to_s.split("_").size > 1
-        holiday = holiday.to_s.split("_").each {|word| word.capitalize!}
+#split("_") removes the "_" between the words and after that is the string size
+#is > 1 then need to capitalize each word
+        holiday = holiday.to_s.each {|word| word.capitalize!}
+#.to_s (to string), 
         puts "  #{holiday.join(" ")}: #{supplies.join(", ")}"
       else
         puts "  #{holiday.capitalize}: #{supplies.join(", ")}"
