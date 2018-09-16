@@ -69,7 +69,6 @@ def all_supplies_in_holidays(holiday_hash)
       if holiday.to_s.split("_").size > 1
         holiday = holiday.to_s.split("_")
         puts "  #{holiday.capitalize.join(" ")}: #{supplies.join(", ")}"
-        end
       else
         puts "  #{holiday.capitalize}: #{supplies.join(", ")}"
       end
