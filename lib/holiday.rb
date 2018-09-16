@@ -63,8 +63,10 @@ def all_supplies_in_holidays(holiday_hash)
         holiday = holiday.to_s.split("_").each {|word| word.capitalize!}
 #.to_s(string), remove "_", iterate and "caplitalize!" replaces original string
         puts "  #{holiday.join(" ")}: #{supplies.join(", ")}"
+#join the words with " " and join the supplies with ", " b/c they are strings
       else
         puts "  #{holiday.capitalize}: #{supplies.join(", ")}"
+#if the holiday is only 1 word - then just capitalize
       end
     end
   end
